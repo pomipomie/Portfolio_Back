@@ -44,15 +44,27 @@ public class Skills {
             inverseJoinColumns = @JoinColumn(name = "eduId")
     )
     private List<Education> edus;
+    
+    @JsonIgnore
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "projects_skills",
+            joinColumns = @JoinColumn(name = "skillId"),
+            inverseJoinColumns = @JoinColumn(name = "projId")
+    )
+    private List<Projects> projs;
 
     public Skills() {
     }
 
-    public Skills(Long skillId, String skillName, String skillLevel, List<Education> edus) {
+    public Skills(Long skillId, String skillName, String skillLevel, List<Education> edus, List<Projects> projs) {
         this.skillId = skillId;
         this.skillName = skillName;
         this.skillLevel = skillLevel;
         this.edus = edus;
+        this.projs = projs;
     }
     
     

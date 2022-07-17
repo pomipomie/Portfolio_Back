@@ -2,6 +2,7 @@
 package com.pomipomie.portfolio.Service;
 
 import com.pomipomie.portfolio.Model.Education;
+import com.pomipomie.portfolio.Model.Projects;
 import com.pomipomie.portfolio.Model.Skills;
 import com.pomipomie.portfolio.Repo.ISkillsRepo;
 import java.util.List;
@@ -44,6 +45,12 @@ public class SkillsServ implements ISkillsServ {
     public List<Skills> skillList() {
         List<Skills> skills = skillRepo.saveAll(skillRepo.findAll());
         return skills;
+    }
+
+    @Override
+    public List<Projects> seeProj(Long skillId) {
+        Skills skills = skillRepo.findById(skillId).get();
+        return skills.getProjs();
     }
     
     

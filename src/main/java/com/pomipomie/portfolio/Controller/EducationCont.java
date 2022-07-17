@@ -25,7 +25,7 @@ public class EducationCont {
        eduServ.createEdu(edus);
     }
     
-    @DeleteMapping ("/pdata/education/{id}/delete")
+    @DeleteMapping ("/pdata/education/{eduId}/delete")
     public void deleteEdu (@PathVariable Long eduId) {
         eduServ.deleteEdu(eduId);
     }
@@ -36,13 +36,13 @@ public class EducationCont {
          return edus;
     }
     
-    @GetMapping ("/pdata/education/{id}/search")
+    @GetMapping ("/pdata/education/{eduId}/search")
     @ResponseBody
     public Education searchEdu(@PathVariable Long eduId) {
         return eduServ.searchEdu(eduId);
     }
     
-    @GetMapping ("/pdata/education/{id}/skills")
+    @GetMapping ("/pdata/education/{eduId}/skills")
     @ResponseBody
     public List<Skills> seeSkills (@PathVariable Long eduId) {
         return eduServ.seeSkills(eduId);

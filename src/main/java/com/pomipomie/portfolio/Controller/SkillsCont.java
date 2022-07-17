@@ -2,6 +2,7 @@
 package com.pomipomie.portfolio.Controller;
 
 import com.pomipomie.portfolio.Model.Education;
+import com.pomipomie.portfolio.Model.Projects;
 import com.pomipomie.portfolio.Model.Skills;
 import com.pomipomie.portfolio.Service.ISkillsServ;
 import java.util.List;
@@ -55,4 +56,9 @@ public class SkillsCont {
         return skillServ.seeEdu(skillId);
     }
     
+    @GetMapping ("/pdata/skill/{skillId}/projects")
+    @ResponseBody
+    public List<Projects> seeProj (@PathVariable Long skillId) {
+        return skillServ.seeProj(skillId);
+    }
 }
