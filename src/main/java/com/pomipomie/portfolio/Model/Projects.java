@@ -34,6 +34,7 @@ public class Projects {
     private String pDescription;
     private String pUrl;
     private String pPreview;
+    private String pRepo;
     
     @ManyToMany(cascade = {
         CascadeType.PERSIST,
@@ -48,14 +49,17 @@ public class Projects {
     public Projects() {
     }
 
-    public Projects(Long projId, String pName, String pDescription, String pUrl, String pPreview, List<Skills> skills) {
+    public Projects(Long projId, String pName, String pDescription, String pUrl, String pPreview, String pRepo, List<Skills> skills) {
         this.projId = projId;
         this.pName = pName;
         this.pDescription = pDescription;
         this.pUrl = pUrl;
         this.pPreview = pPreview;
+        this.pRepo = pRepo;
         this.skills = skills;
     }
+
+    
     
     
 }
