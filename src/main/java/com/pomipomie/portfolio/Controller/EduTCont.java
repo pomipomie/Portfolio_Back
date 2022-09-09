@@ -15,39 +15,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://pzxrslcdua.us09.qoddiapp.com/")
+@CrossOrigin (origins = "http://localhost:3000" )
 @RestController
 public class EduTCont {
     @Autowired
     public IEduTServ eduTServ;
     
-    @CrossOrigin("http://pzxrslcdua.us09.qoddiapp.com/")
     @PostMapping ("/pdata/edut/new")
     public void createEduT (@RequestBody EduType edut) {
         eduTServ.createEduT(edut);
     }
     
-    @CrossOrigin("http://pzxrslcdua.us09.qoddiapp.com/")
     @DeleteMapping ("/pdata/edut/{eduTId}/delete")
     public void deleteEduT (@PathVariable Long eduTId) {
         eduTServ.deleteEduT(eduTId);
     }
     
-    @CrossOrigin("http://pzxrslcdua.us09.qoddiapp.com/")
     @PutMapping ("/pdata/edut/edit")
     public EduType editEduT (@RequestBody EduType edut) {
         eduTServ.editEduT(edut);
         return edut;
     }
     
-    @CrossOrigin("http://pzxrslcdua.us09.qoddiapp.com/")
     @GetMapping ("/pdata/edut/{eduTId}/search")
     @ResponseBody
     public EduType searchEduT (@PathVariable Long eduTId) {
         return eduTServ.searchEduT(eduTId);
     }
     
-    @CrossOrigin("http://pzxrslcdua.us09.qoddiapp.com/")
     @GetMapping ("/portfolioap/educt/list")
     @ResponseBody
     public List<EduType> eduTList() {
