@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin
+@CrossOrigin("http://pzxrslcdua.us09.qoddiapp.com/")
 @RestController
 public class EducationCont {
     @Autowired
